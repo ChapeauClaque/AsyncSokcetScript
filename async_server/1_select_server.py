@@ -11,11 +11,11 @@ def connection_accept(server_socket: socket.socket):
 
 
 def transfer_data(client_socket: socket.socket):
-        if request := client_socket.recv(4096):
-            response = "I received {} bytes".format(len(request))
-            client_socket.send(response.encode())
-        else:
-            close_connection(client_socket)
+    if request := client_socket.recv(4096):
+        response = "I received {} bytes".format(len(request))
+        client_socket.send(response.encode())
+    else:
+        close_connection(client_socket)
 
 
 def close_connection(client_socket: socket.socket):
